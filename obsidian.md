@@ -3,7 +3,7 @@ aliases:
   - Obsidian
 ---
 
-[Wikipedia](https://en.wikipedia.org/wiki/Obsidian_(software)) describes Obsidian as it follows:
+[Wikipedia](https://en.wikipedia.org/wiki/Obsidian_(software)) describes Obsidian as follows:
 
 > **Obsidian** is a proprietary [personal knowledge base](https://en.wikipedia.org/wiki/Personal_knowledge_base "Personal knowledge base") and [note-taking](https://en.wikipedia.org/wiki/Note-taking "Note-taking") application that operates on [markdown](https://en.wikipedia.org/wiki/Markdown "Markdown") files.
 

@@ -3,7 +3,7 @@ aliases:
   - Markdown
 ---
 
-[Wikipedia](https://en.wikipedia.org/wiki/Markdown) describes Markdown as it follows:
+[Wikipedia](https://en.wikipedia.org/wiki/Markdown) describes Markdown as follows:
 
 > **Markdown**[\[9\]](https://en.wikipedia.org/wiki/Markdown#cite_note-philosophy-9) is a [lightweight markup language](https://en.wikipedia.org/wiki/Lightweight_markup_language "Lightweight markup language") for creating [formatted text](https://en.wikipedia.org/wiki/Formatted_text "Formatted text") using a [plain-text editor](https://en.wikipedia.org/wiki/Text_editor "Text editor").
 
