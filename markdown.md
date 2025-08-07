@@ -139,15 +139,19 @@ As you can see, you can mix and match lists, just beware that the rules for this
 
 ## Code
 
+**Note:** The styling of the examples on this section is a bit off because most implementations of Markdown prioritize backticks when parsing the styling for code blocks. I hope these examples are still legible.
+
 As you have seen throughout this document, there are sections where the text has a very simplistic format. These sections are formatted as code.
 
 You can format text as code in one of two ways, as a inline block or as a separate block of text.
 
-To format text as an inline code block you just have to encase your text using <code>`</code>(Backtick), like this <code>`Hello World`</code>.
+To format text as an inline code block you just have to encase your text using **\`**(Backtick), like this **\`Hello World\`**.
 
-To format text as a separate code block you can encase your text using three <code>`</code>, or indenting your text using four spaces or a tab. Here are some examples:
+To format text as a separate code block you can encase your text using three **\`**(Backtick), or indenting your text using four spaces or a tab. Here are some examples:
 
-<code>```<br/>Hello word<br/>```</code>
+\`\`\`  
+Hello word  
+\`\`\`
 
 ```
 	Hello word
@@ -157,9 +161,11 @@ To format text as a separate code block you can encase your text using three <co
     Hello word
 ```
 
-**Note:** Most implementations of Markdown expect that if you are using backticks you are using text encased on single backticks, like so <code>`Hello World`</code>, or using text encased on three backticks where the backticks are separate from the text by line breaks(New lines), like this:
+**Note:** Most implementations of Markdown expect that if you are using backticks you are using text encased on single backticks, like so **\`Hello World\`**, or using text encased on three backticks where the backticks are separate from the text by line breaks(New lines), like this:
 
-<code>```<br/>Hello World<br/>```</code>
+\`\`\`  
+Hello World  
+\`\`\`
 
 My personal experience has been that using indentation for formatting text as code or using backticks on a different way that the one explained results in inconsistent and unexpected behavior.
 
