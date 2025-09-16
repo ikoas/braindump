@@ -52,6 +52,112 @@ You can set up your name by using the command `git config user.name "Your Name"`
 
 ## Tracking Changes
 
+### Adding Files
+
+In layman terms, Git keeps all it's info inside the `.git` directory, this includes every version of your project's files but they have to be **added** by you. You can do this with the command `git add`, this will take a snapshot of the files you tell it to. For example, imagine the following file structure:
+
+```
+./.git/
+./batman.txt
+./stark.txt
+./t-800.txt
+```
+
+Right after running `git init` the `.git` directory doesn't have any file inside, so you could consider your repository empty. If you then run `git status` you'll get a message about the current status of your repository. We'll get a message similar to following if we run `git status` in our example:
+
+```
+On branch main
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	batman.txt
+	stark.txt
+	t-800.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+```
+
+To add a file we just need to specify the file in the command. Let's add `batman.txt` to our repository, to do this we just need to run `git add batman.txt`. Now lets run `git status` and see what happened:
+
+```
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   batman.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	stark.txt
+	t-800.txt
+```
+
+Now `batman.txt` has been added but see how all other files haven't. For the sake of completeness, what was added was the current version of `batman.txt` not `batman.txt` itself if we change it the version added will still be the version of the file that was added when we ran `git add`. Let's see this in action. First let's see what's inside `batman.txt`:
+
+```
+I'm Batman
+```
+
+Ok, let's change it:
+
+```
+I'm Batman
+Bitch
+```
+
+Let's see what `git status` has to say:
+
+```
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   batman.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   batman.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	stark.txt
+	t-800.txt
+```
+
+As you can see the message has a new section. According to Git `stark.txt` and `t-800.txt` are untracked. What does that mean? It means that these files haven't been added at all. The only file added so far is `batman.txt` but Git shows it has changes to be committed and changes that are not staged for commit. What's that all about? Remember that we said commits are snapshots of our project? Running `git add` adds files to form a commit, this means that you can pick a chose specific parts of your project to snapshot. Returning to the message `git status` printed, this means that at this moment we added a version of `batman.txt` to our **commit** but we modified the file and those changes aren't park of the version that is part of our commit. 
+
+Here's a useful command: `git diff`. This command shows you the specific differences. You can use it to show specific differences between commits or between commits and the files outside the `.git` directory. In our example if we use the command `git diff` we get a message like the following:
+
+```
+diff --git a/batman.txt b/batman.txt
+index d0943e8..a707705 100644
+--- a/batman.txt
++++ b/batman.txt
+@@ -1 +1,2 @@
+ I'm Batman
++Bitch
+```
+
+Running this command on a terminal will use colors that will make understanding the message easier. In this case the message can be resumed in, there are 2 versions, the first versions is the we added with `git add` and is staged for commit, and the other is the one we modified which says:
+
+```
+I'm Batman
+Bitch
+```
+
+`git diff` does a lot of other stuff but let's leave this subject for later.
+
+**Quick Tip:** You can add all files under your current directory position recursively by running `git add .`. This means that if you are inside a directory on your project, this command will add every file in that directory and every file inside every directory that in there.
+
+### Committing
+
 #TODO Working Tree and Index. How does `git add`, `git commit` and `git restore`? Supporting commands `git status`, `git diff`, `git log` and `git tag`.
 
 ---
