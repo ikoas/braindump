@@ -63,7 +63,7 @@ In layman terms, Git keeps all it's info inside the `.git` directory, this inclu
 ./t-800.txt
 ```
 
-Right after running `git init` the `.git` directory doesn't have any file inside, so you could consider your repository empty. If you then run `git status` you'll get a message about the current status of your repository. We'll get a message similar to following if we run `git status` in our example:
+Right after running `git init` the `.git` directory doesn't have any files inside, so you could consider your repository empty. If you then run `git status` you'll get a message about the current status of your repository. We'll get a message similar to the following if we run `git status` in our example:
 
 ```
 On branch main
@@ -96,7 +96,7 @@ Untracked files:
 	t-800.txt
 ```
 
-Now `batman.txt` has been added but see how all other files haven't. For the sake of completeness, what was added was the current version of `batman.txt` not `batman.txt` itself if we change it the version added will still be the version of the file that was added when we ran `git add`. Let's see this in action. First let's see what's inside `batman.txt`:
+Now `batman.txt` has been added but notice how all other files haven't. For the sake of completeness, what was added was the current version of `batman.txt` not `batman.txt` itself, if we change it, the version added will still be the version of the file that was added when we ran `git add`. Let's see this in action. First let's see what's inside `batman.txt`:
 
 ```
 I'm Batman
@@ -131,9 +131,9 @@ Untracked files:
 	t-800.txt
 ```
 
-As you can see the message has a new section. According to Git `stark.txt` and `t-800.txt` are untracked. What does that mean? It means that these files haven't been added at all. The only file added so far is `batman.txt` but Git shows it has changes to be committed and changes that are not staged for commit. What's that all about? Remember that we said commits are snapshots of our project? Running `git add` adds files to form a commit, this means that you can pick a chose specific parts of your project to snapshot. Returning to the message `git status` printed, this means that at this moment we added a version of `batman.txt` to our **commit** but we modified the file and those changes aren't park of the version that is part of our commit. 
+As you can see the message has a new section. According to Git, `stark.txt` and `t-800.txt` are untracked. What does that mean? It means that these files haven't been added at all. The only file added so far is `batman.txt` but Git shows it has changes to be committed and changes that are not staged for commit. What's that all about? Remember that we said commits are snapshots of our project? Running `git add` adds files and groups them to form a commit, this means that you can pick and chose specific parts of your project to snapshot. Returning to the message `git status` printed, this means that at this moment we added a version of `batman.txt` to our **commit** but we modified the file and those changes are not in the version that is part of our commit. 
 
-Here's a useful command: `git diff`. This command shows you the specific differences. You can use it to show specific differences between commits or between commits and the files outside the `.git` directory. In our example if we use the command `git diff` we get a message like the following:
+Here's a useful command: `git diff`. This command shows you detailed differences. You can use it to show specific differences between commits or between commits and the files outside the `.git` directory. In our example, if we use the command `git diff` we get a message like the following:
 
 ```
 diff --git a/batman.txt b/batman.txt
@@ -145,14 +145,12 @@ index d0943e8..a707705 100644
 +Bitch
 ```
 
-Running this command on a terminal will use colors that will make understanding the message easier. In this case the message can be resumed in, there are 2 versions, the first versions is the we added with `git add` and is staged for commit, and the other is the one we modified which says:
+Running this command on a terminal will use colors that will make understanding the message easier. In this case the message can be summarized like this, there are 2 versions, the first version is the one we added with `git add` and is staged for commit, and the other version is the one we modified, which says:
 
 ```
 I'm Batman
 Bitch
 ```
-
-`git diff` does a lot of other stuff but let's leave this subject for later.
 
 **Quick Tip:** You can add all files under your current directory position recursively by running `git add .`. This means that if you are inside a directory on your project, this command will add every file in that directory and every file inside every directory that in there.
 
