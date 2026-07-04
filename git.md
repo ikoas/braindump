@@ -152,9 +152,11 @@ I'm Batman
 Bitch
 ```
 
-**Quick Tip:** You can add all files under your current directory position recursively by running `git add .`. This means that if you are inside a directory on your project, this command will add every file in that directory and every file inside every directory that in there.
+**Quick Tip:** You can add all files under your current directory position recursively by running `git add .`. This means that if you are inside a directory on your project, this command will add every file in this directory and add all files inside all folders inside this folder.
 
 ### Committing
+
+
 
 #TODO Working Tree and Index. How does `git add`, `git commit` and `git restore`? Supporting commands `git status`, `git diff`, `git log` and `git tag`.
 
